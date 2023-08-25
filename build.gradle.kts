@@ -20,11 +20,12 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.28")
     compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
     compileOnly("dev.plex:server:1.3")
+    compileOnly(files("libs/EssentialsX.jar"))
 }
 
-group = "dev.plex"
+group = "me.videogamesm12"
 version = "1.0"
-description = "ExampleModule"
+description = "Module-NickMiniMessage"
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
@@ -39,7 +40,7 @@ publishing {
 }
 
 tasks.getByName<Jar>("jar") {
-    archiveBaseName.set("Plex-ExampleModule")
+    archiveBaseName.set("Module-NickMiniMessage")
     archiveVersion.set("")
 }
 

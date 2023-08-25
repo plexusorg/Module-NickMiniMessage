@@ -1,4 +1,4 @@
-name: Module-Example
-main: dev.plex.ExampleModule
-description: An example module for Plex
+name: Module-NickMiniMessage
+main: me.videogamesm12.nickmm.NickMiniMessageModule
+description: Module for Plex that adds a command allowing for Essentials nicknames to be created with MiniMessage
 version: 1.0

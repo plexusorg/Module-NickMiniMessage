@@ -13,3 +13,6 @@ Thumbs.db
 # Gradle
 /build/
 /.gradle/
+
+# Libraries
+/libs/
