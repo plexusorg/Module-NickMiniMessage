@@ -19,12 +19,12 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.28")
     annotationProcessor("org.projectlombok:lombok:1.18.28")
     compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
-    compileOnly("dev.plex:server:1.3")
-    compileOnly(files("libs/EssentialsX.jar"))
+    compileOnly("dev.plex:server:1.4-SNAPSHOT")
+    compileOnly("net.essentialsx:EssentialsX:2.21.0-SNAPSHOT")
 }
 
-group = "me.videogamesm12"
-version = "1.0"
+group = "dev.plex"
+version = "1.4-SNAPSHOT"
 description = "Module-NickMiniMessage"
 
 java {

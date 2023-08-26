@@ -1,4 +1,4 @@
-package me.videogamesm12.nickmm.command;
+package dev.plex.module.nickmm.command;
 
 import com.earth2me.essentials.I18n;
 import com.earth2me.essentials.User;
@@ -6,9 +6,8 @@ import dev.plex.command.PlexCommand;
 import dev.plex.command.annotation.CommandParameters;
 import dev.plex.command.annotation.CommandPermissions;
 import dev.plex.command.source.RequiredCommandSource;
-import dev.plex.util.PlexUtils;
+import dev.plex.module.nickmm.NickMiniMessageModule;
 import dev.plex.util.minimessage.SafeMiniMessage;
-import me.videogamesm12.nickmm.NickMiniMessageModule;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;

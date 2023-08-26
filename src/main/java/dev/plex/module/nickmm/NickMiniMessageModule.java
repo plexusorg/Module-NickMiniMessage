@@ -1,8 +1,8 @@
-package me.videogamesm12.nickmm;
+package dev.plex.module.nickmm;
 
 import com.earth2me.essentials.Essentials;
 import dev.plex.module.PlexModule;
-import me.videogamesm12.nickmm.command.NickMMCommand;
+import dev.plex.module.nickmm.command.NickMMCommand;
 import org.bukkit.Bukkit;
 
 public class NickMiniMessageModule extends PlexModule
@@ -12,7 +12,7 @@ public class NickMiniMessageModule extends PlexModule
     {
         if (!Bukkit.getPluginManager().isPluginEnabled("Essentials"))
         {
-            throw new IllegalStateException("We need Essentials for this module to work!");
+            throw new IllegalStateException("EssentialsX is required for this module to work!");
         }
 
         registerCommand(new NickMMCommand());
