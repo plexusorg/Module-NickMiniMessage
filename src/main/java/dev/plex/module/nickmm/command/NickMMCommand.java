@@ -8,6 +8,8 @@ import dev.plex.command.annotation.CommandPermissions;
 import dev.plex.command.source.RequiredCommandSource;
 import dev.plex.module.nickmm.NickMiniMessageModule;
 import dev.plex.util.minimessage.SafeMiniMessage;
+import java.util.Collections;
+import java.util.List;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
@@ -64,5 +66,11 @@ public class NickMMCommand extends PlexCommand
         NickMiniMessageModule.getEssentials().getUser(player).setNickname(legacy);
 
         return legacyComponent.deserialize(I18n.tl("nickSet", legacy));
+    }
+
+    @Override
+    public @NotNull List<String> smartTabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException
+    {
+        return Collections.emptyList();
     }
 }
