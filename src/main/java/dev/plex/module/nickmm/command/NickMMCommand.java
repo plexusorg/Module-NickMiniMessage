@@ -30,19 +30,19 @@ public class NickMMCommand extends PlexCommand
     private final LegacyComponentSerializer legacyComponent = LegacyComponentSerializer.legacySection();
 
     @Override
-    protected Component execute(@NotNull CommandSender commandSender, @Nullable Player player, @NotNull String[] strings)
+    protected Component execute(@NotNull CommandSender commandSender, @Nullable Player player, @NotNull String[] args)
     {
         if (!Bukkit.getPluginManager().isPluginEnabled("Essentials"))
         {
             return Component.text("Essentials is not enabled!", NamedTextColor.RED);
         }
 
-        if (strings.length == 0)
+        if (args.length == 0)
         {
             return usage();
         }
 
-        final Component nick = SafeMiniMessage.mmDeserializeWithoutEvents(strings[0]);
+        final Component nick = SafeMiniMessage.mmDeserializeWithoutEvents(args[0]);
         final String plain = plainText.serialize(nick);
 
         if (plain.length() > NickMiniMessageModule.getEssentials().getSettings().getMaxNickLength()
