@@ -46,7 +46,7 @@ public class NickMMCommand extends PlexCommand
         if (plain.length() > NickMiniMessageModule.getEssentials().getSettings().getMaxNickLength()
                 && !commandSender.hasPermission("plex.nickmm.ignore_length_limit"))
         {
-            return legacyComponent.deserialize(I18n.tl("nickTooLong"));
+            return legacyComponent.deserialize(I18n.tlLiteral("nickTooLong"));
         }
 
         if (!commandSender.hasPermission("plex.nickmm.ignore_matching"))
@@ -57,7 +57,7 @@ public class NickMMCommand extends PlexCommand
 
                 if (name.equalsIgnoreCase(plain) && !user.getUUID().equals(player.getUniqueId()))
                 {
-                    return legacyComponent.deserialize(I18n.tl("nickInUse"));
+                    return legacyComponent.deserialize(I18n.tlLiteral("nickInUse"));
                 }
             }
         }
@@ -65,7 +65,7 @@ public class NickMMCommand extends PlexCommand
         final String legacy = legacyComponent.serialize(nick);
         NickMiniMessageModule.getEssentials().getUser(player).setNickname(legacy);
 
-        return legacyComponent.deserialize(I18n.tl("nickSet", legacy));
+        return legacyComponent.deserialize(I18n.tlLiteral("nickSet", legacy));
     }
 
     @Override
