@@ -8,8 +8,10 @@ import dev.plex.command.annotation.CommandPermissions;
 import dev.plex.command.source.RequiredCommandSource;
 import dev.plex.module.nickmm.NickMiniMessageModule;
 import dev.plex.util.minimessage.SafeMiniMessage;
+
 import java.util.Collections;
 import java.util.List;
+
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
@@ -46,18 +48,18 @@ public class NickMMCommand extends PlexCommand
         if (plain.length() > NickMiniMessageModule.getEssentials().getSettings().getMaxNickLength()
                 && !commandSender.hasPermission("plex.nickmm.ignore_length_limit"))
         {
-            return legacyComponent.deserialize(I18n.tlLiteral("nickTooLong"));
+            return mmString(I18n.tlLiteral("nickTooLong"));
         }
 
         if (!commandSender.hasPermission("plex.nickmm.ignore_matching"))
         {
             for (final User user : NickMiniMessageModule.getEssentials().getOnlineUsers())
             {
-                final String name = user.getNickname() != null ? plainText.serialize(legacyComponent.deserialize(user.getNickname())) : user.getName();
+                final String name = user.getNickname() != null ? plainText.serialize(mmString(user.getNickname())) : user.getName();
 
                 if (name.equalsIgnoreCase(plain) && !user.getUUID().equals(player.getUniqueId()))
                 {
-                    return legacyComponent.deserialize(I18n.tlLiteral("nickInUse"));
+                    return mmString(I18n.tlLiteral("nickInUse"));
                 }
             }
         }
@@ -65,7 +67,7 @@ public class NickMMCommand extends PlexCommand
         final String legacy = legacyComponent.serialize(nick);
         NickMiniMessageModule.getEssentials().getUser(player).setNickname(legacy);
 
-        return legacyComponent.deserialize(I18n.tlLiteral("nickSet", legacy));
+        return mmString(I18n.tlLiteral("nickSet", legacy));
     }
 
     @Override
