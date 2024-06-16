@@ -55,7 +55,7 @@ public class NickMMCommand extends PlexCommand
         {
             for (final User user : NickMiniMessageModule.getEssentials().getOnlineUsers())
             {
-                final String name = user.getNickname() != null ? plainText.serialize(mmString(user.getNickname())) : user.getName();
+                final String name = user.getNickname() != null ? plainText.serialize(legacyComponent.deserialize(user.getNickname())) : user.getName();
 
                 if (name.equalsIgnoreCase(plain) && !user.getUUID().equals(player.getUniqueId()))
                 {
