@@ -20,11 +20,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.projectlombok:lombok:1.18.34")
-    annotationProcessor("org.projectlombok:lombok:1.18.34")
-    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
-    compileOnly("dev.plex:server:1.5-SNAPSHOT")
-    compileOnly("net.essentialsx:EssentialsX:2.21.0-20241015.111501-81")
+    compileOnly("org.projectlombok:lombok:1.18.38")
+    annotationProcessor("org.projectlombok:lombok:1.18.38")
+    compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
+    compileOnly("dev.plex:server:1.5")
+    compileOnly("net.essentialsx:EssentialsX:2.21.2-SNAPSHOT")
 }
 
 group = "dev.plex"
