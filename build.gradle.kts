@@ -20,15 +20,15 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.projectlombok:lombok:1.18.38")
-    annotationProcessor("org.projectlombok:lombok:1.18.38")
-    compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
-    compileOnly("dev.plex:server:1.5")
+    compileOnly("org.projectlombok:lombok:1.18.42")
+    annotationProcessor("org.projectlombok:lombok:1.18.42")
+    compileOnly("io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT")
+    compileOnly("dev.plex:server:1.6")
     compileOnly("net.essentialsx:EssentialsX:2.21.2-SNAPSHOT")
 }
 
 group = "dev.plex"
-version = "1.5"
+version = "1.6"
 description = "Module-NickMiniMessage"
 
 java {
