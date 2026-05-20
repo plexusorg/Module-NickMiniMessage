@@ -1,4 +1,5 @@
 name: Module-NickMiniMessage
 main: dev.plex.module.nickmm.NickMiniMessageModule
 description: Module for Plex that adds a command allowing for Essentials nicknames to be created with MiniMessage
-version: 1.6
+version: 2.0-SNAPSHOT
+apiCompatibility: 1
