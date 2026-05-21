@@ -8,6 +8,12 @@ import org.bukkit.Bukkit;
 public class NickMiniMessageModule extends PlexModule
 {
     @Override
+    public void load()
+    {
+        registerCommand(new NickMMCommand());
+    }
+
+    @Override
     public void enable()
     {
         if (!Bukkit.getPluginManager().isPluginEnabled("Essentials"))
@@ -15,7 +21,6 @@ public class NickMiniMessageModule extends PlexModule
             throw new IllegalStateException("EssentialsX is required for this module to work!");
         }
 
-        registerCommand(new NickMMCommand());
     }
 
     public static Essentials getEssentials()
