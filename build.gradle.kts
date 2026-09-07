@@ -25,7 +25,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.46")
     compileOnly("io.papermc.paper:paper-api:26.2.build.+")
     compileOnly("dev.plex:api:2.0-SNAPSHOT")
-    compileOnly("net.essentialsx:EssentialsX:2.22.0-SNAPSHOT")
+    compileOnly("net.essentialsx:EssentialsX:2.22.1-SNAPSHOT")
 }
 
 group = "dev.plex"

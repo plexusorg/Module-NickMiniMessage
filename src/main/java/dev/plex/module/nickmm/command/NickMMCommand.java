@@ -30,7 +30,8 @@ public class NickMMCommand extends SimplePlexCommand
 {
     private final NickMiniMessageModule module;
     private final PlainTextComponentSerializer plainText = PlainTextComponentSerializer.plainText();
-    private final LegacyComponentSerializer legacyComponent = LegacyComponentSerializer.legacySection();
+    private final LegacyComponentSerializer legacyComponent = LegacyComponentSerializer.builder()
+            .character('\u00a7').hexColors().useUnusualXRepeatedCharacterHexFormat().build();
     private final MiniMessage miniMessage = MiniMessage.builder().tags(new NicknameTagResolver()).build();
 
     public NickMMCommand(NickMiniMessageModule module)
@@ -49,11 +50,9 @@ public class NickMMCommand extends SimplePlexCommand
     protected void configureCommand(LiteralArgumentBuilder<CommandSourceStack> command)
     {
         command.executes(context -> executeCommand(context, (sender, player) -> executeTyped(sender, player, null)));
-        command.then(word("nick")
+        command.then(greedyString("nick")
                 .executes(context -> executeCommand(context,
-                        (sender, player) -> executeTyped(sender, player, string(context, "nick"))))
-                .then(greedyString("ignored").executes(context -> executeCommand(context,
-                        (sender, player) -> executeTyped(sender, player, string(context, "nick"))))));
+                        (sender, player) -> executeTyped(sender, player, string(context, "nick").split(" ", 2)[0]))));
     }
 
     private Component executeTyped(CommandSender commandSender, Player player, @Nullable String input)
